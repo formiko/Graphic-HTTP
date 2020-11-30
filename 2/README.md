@@ -1,19 +1,18 @@
 # 第2章 简单的HTTP协议
 ## 2.8 使用Cookie的状态管理
-sequenceDiagram
-  Note right of A: 倒霉, 碰到B了
-  A->B:   Hello B, how are you ?
-  note left of B: 倒霉,碰到A了
-  B-->A:  Fine, thx, and you?
-  note over A,B: 快点溜，太麻烦了
-  A->>B:  I'm fine too.
-  note left of B: 快点打发了A
-  B-->>A: Great!
-  note right of A: 溜之大吉
-  A-xB:   Wait a moment
-  loop Look B every minute
-　  A->>B: look B, go?
-　　B->>A: let me go?
-　end
-　B--xA: I'm off, byte 　
-  note right of A: 太好了, 他走了
+```sequence
+title: 序列图sequence(示例)
+participant A
+participant B
+participant C
+
+note left of A: A左侧说明
+note over B: 覆盖B的说明
+note right of C: C右侧说明
+
+A->A:自己到自己
+A->B:实线实箭头
+A-->C:虚线实箭头
+B->>C:实线虚箭头
+B-->>A:虚线虚箭头
+​```
