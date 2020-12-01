@@ -25,7 +25,7 @@
     <Set-Cookie: sid=1342077140226724; path=/; expires=Wed,10-Oct-12 07:12:20 GMT>
     Content-Type: text/plain; charset=UTF-8
     ```
-  3.请求报文（自动发送保存着的Cookie信息）
+  3. 请求报文（自动发送保存着的Cookie信息）
     ```
     GET /image/ HTTP/1.1
     Host: hackr.jp
