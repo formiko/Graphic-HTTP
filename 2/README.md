@@ -10,4 +10,24 @@
   2.在响应中添加Cookie后返回响应(客户端保存Cookie)
 * 第2次以后（存有Cookie信息状态）的请求  
   3.客户端在请求中添加Cookie后发送请求(服务器检查Cookie)  
-  4.服务器响应
+  服务器响应
+* Cookie交互过程中的HTTP请求和响应报文内容如下：
+  1. 请求报文（没有Cookie信息的状态）
+    ```
+    GET /reader/ HTTP/1.1
+    Host: hackr.jp
+    ```
+  2. 响应报文（服务端生成Cookie信息）
+    ```
+    HTTP/1.1 200 OK
+    Data: Thu, 12 Jul 2012 07:12:20 GMT
+    Server: Apache
+    <Set-Cookie: sid=1342077140226724; path=/; expires=Wed,10-Oct-12 07:12:20 GMT>
+    Content-Type: text/plain; charset=UTF-8
+    ```
+  3.请求报文（自动发送保存着的Cookie信息）
+    ```
+    GET /image/ HTTP/1.1
+    Host: hackr.jp
+    Cookie: sid=1342077140226724
+    ```
